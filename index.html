@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arjun Jagdale - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        AOS.init({
+          duration: 600,        // optional: controls speed
+          easing: 'ease-in-out' // optional: adds smoothness
+        });
+        lucide.createIcons();
+      });
+    </script>
+    <style>
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background-color: #4f46e5;
+        border-radius: 4px;
+      }
+
+      /* ✨ Animated glowing grid background */
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 200%;
+        height: 200%;
+        background-image: 
+          linear-gradient(rgba(99, 102, 241, 0.06) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(99, 102, 241, 0.06) 1px, transparent 1px);
+        background-size: 40px 40px;
+        z-index: 0;
+        pointer-events: none;
+        animation: moveBackground 50s linear infinite;
+      }
+
+      /* ✨ Center glow aura */
+      body::after {
+        content: "";
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 800px;
+        height: 800px;
+        background: radial-gradient(circle, rgba(99, 102, 241, 0.15), transparent 70%);
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      @keyframes moveBackground {
+        from {
+          transform: translate(0, 0);
+        }
+        to {
+          transform: translate(-20px, -20px);
+        }
+      }
+
+      main, header, footer {
+        position: relative;
+        z-index: 10;
+      }
+
+      .glow-line {
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #6366f1, transparent);
+        animation: glow 2.5s linear infinite;
+        border-radius: 9999px;
+        opacity: 0.8;
+      }
+
+      @keyframes glow {
+        0% {
+          background-position: -200% center;
+        }
+        100% {
+          background-position: 200% center;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="bg-[#0e1117] text-gray-100 font-sans leading-relaxed min-h-screen">
+    <!-- Back to Top -->
+    <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+      class="fixed bottom-5 right-5 bg-indigo-600 text-white p-3 rounded-full shadow-lg hover:bg-indigo-500 z-50">
+      ↑
+    </button>
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full bg-[#161b22]/90 backdrop-blur-md z-50 shadow-md">
+      <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center">
+        <h1 class="text-2xl font-bold text-white">Arjun Jagdale</h1>
+        <nav class="flex space-x-6 mt-2 md:mt-0 text-indigo-400">
+          <a href="https://github.com/ArjunJagdale" class="hover:text-white transition flex items-center gap-1"><i data-lucide="github" class="w-4 h-4"></i> GitHub</a>
+          <a href="https://www.linkedin.com/in/arjun-jagdale/" class="hover:text-white transition flex items-center gap-1"><i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 pt-32 pb-12 space-y-20">
+      <!-- About -->
+      <section class="bg-[#161b22] p-8 rounded-xl shadow-md border border-[#30363d]" data-aos="fade-up">
+        <h2 class="text-3xl font-bold mb-4 text-indigo-400 flex items-center gap-2">👋 About Me</h2>
+        <p class="text-lg text-gray-300">
+          I am an aspiring AI/ML Engineer and Open-source Contributor with strong foundation in Large Language Models (LLMs), PyTorch, and AI agents. Experienced in agentic workflows and retrieval-based systems using tools like LangChain, LangGraph and LlamaIndex.
+        </p>
+      </section>
+
+      <div class="glow-line w-full"></div>
+
+<!-- Skills -->
+<section class="bg-[#161b22] p-8 rounded-xl shadow-md border border-[#30363d]" data-aos="fade-up">
+  <h2 class="text-3xl font-bold mb-6 text-indigo-400 flex items-center gap-2">🔧 Skills</h2>
+  <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 text-lg text-gray-300">
+    <div class="flex items-center gap-2">
+      <i data-lucide="code" class="w-5 h-5 text-indigo-400"></i> Python
+    </div>
+    <div class="flex items-center gap-2">
+      <i data-lucide="database" class="w-5 h-5 text-indigo-400"></i> SQL
+    </div>
+    <div class="flex items-center gap-2">
+      <i data-lucide="terminal" class="w-5 h-5 text-indigo-400"></i> C
+    </div>
+    <div class="flex items-center gap-2">
+      <i data-lucide="activity" class="w-5 h-5 text-indigo-400"></i> PyTorch
+    </div>
+    <div class="flex items-center gap-2">
+      <i data-lucide="line-chart" class="w-5 h-5 text-indigo-400"></i> Scikit-learn
+    </div>
+    <div class="flex items-center gap-2">
+      <i data-lucide="settings" class="w-5 h-5 text-indigo-400"></i> Transformers
+    </div>
+    <div class="flex items-center gap-2">
+      <i data-lucide="bot" class="w-5 h-5 text-indigo-400"></i> LangChain
+    </div>
+    <div class="flex items-center gap-2">
+      <i data-lucide="workflow" class="w-5 h-5 text-indigo-400"></i> LangGraph
+    </div>
+    <div class="flex items-center gap-2">
+      <i data-lucide="library" class="w-5 h-5 text-indigo-400"></i> LlamaIndex
+    </div>
+    <div class="flex items-center gap-2">
+      <i data-lucide="cloud" class="w-5 h-5 text-indigo-400"></i> GCP
+    </div>
+    <div class="flex items-center gap-2">
+      <i data-lucide="git-branch" class="w-5 h-5 text-indigo-400"></i> Git
+    </div>
+    <div class="flex items-center gap-2">
+      <i data-lucide="box" class="w-5 h-5 text-indigo-400"></i> Docker
+    </div>
+    <div class="flex items-center gap-2">
+      <i data-lucide="brain" class="w-5 h-5 text-indigo-400"></i> OpenAI
+    </div>
+    <div class="flex items-center gap-2">
+      <i data-lucide="router" class="w-5 h-5 text-indigo-400"></i> OpenRouter
+    </div>
+  </div>
+</section>
+
+
+      <div class="glow-line w-full"></div>
+
+      <!-- Experience -->
+      <section class="bg-[#161b22] p-8 rounded-xl shadow-md border border-[#30363d]" data-aos="fade-up">
+        <h2 class="text-3xl font-bold mb-6 text-indigo-400 flex items-center gap-2">⚒️ Experience</h2>
+        <div class="space-y-6">
+          <div class="bg-[#0d1117] p-6 rounded-xl shadow border border-[#30363d] hover:shadow-lg transition-all">
+            <h3 class="font-semibold text-xl text-indigo-300 mb-2">IBM – Intern (IBM SkillsBuild Remote Data Science Mentorship)</h3>
+            <p class="text-gray-400">Developed a Machine Learning pipeline using Scikit-Learn and Python to predict Titanic survival.</p>
+            <p class="text-gray-400">Handled missing/categorical data, applied one-hot encoding, and trained a RandomForestClassifier.</p>
+            <p class="text-gray-400">Tuned hyperparameters with GridSearchCV, exported the model, and deployed it using Gradio for inference.</p>
+            <a href="https://github.com/ArjunJagdale/Titanic-Survival-Prediction" class="text-indigo-400 hover:underline font-medium">View on GitHub</a>
+          </div>
+        </div>
+
+      </section>
+
+      <div class="glow-line w-full"></div>
+
+      <!-- Projects -->
+      <section class="bg-[#161b22] p-8 rounded-xl shadow-md border border-[#30363d]" data-aos="fade-up">
+        <h2 class="text-3xl font-bold mb-6 text-indigo-400 flex items-center gap-2">🚀 Projects</h2>
+        <div class="space-y-6">
+          <div class="bg-[#0d1117] p-6 rounded-xl shadow border border-[#30363d] hover:shadow-lg transition-all">
+            <h3 class="font-semibold text-xl text-indigo-300 mb-2">Langchain based website Question-Answer Bot</h3>
+            <p class="text-gray-400">Deployed a Retrieval-Augmented Generation (RAG) bot that answers questions asked on a given website URL.</p>
+            <p class="text-gray-400">Utilized LangChain for document loading, text splitting, and semantic context retrieval.</p>
+            <p class="text-gray-400">Generated embeddings using HuggingFaceEmbeddings and stored them in a FAISS index via LangChain’s VectorStore.</p>
+            <a href="https://github.com/ArjunJagdale/Langchain-RAG-QA-BOT" class="text-indigo-400 hover:underline font-medium">View on GitHub</a>
+          </div>
+
+          <div class="bg-[#0d1117] p-6 rounded-xl shadow border border-[#30363d] hover:shadow-lg transition-all">
+            <h3 class="font-semibold text-xl text-indigo-300 mb-2">LangGraph based AI SQL Agent</h3>
+            <p class="text-gray-400">Developed an AI Agent that answers questions based on a given CSV file by generating and executing SQL queries.</p>
+            <p class="text-gray-400">Used LangGraph with mistral-3.2 model to store data, analyze database, data extraction and SQL query generation. </p>
+            <p class="text-gray-400">Implemented Gradio interface for deployment and real time inference.</p>
+            <a href="https://github.com/ArjunJagdale/AI-SQL-Agent-Powered-by-LangGraph-Mistral-" class="text-indigo-400 hover:underline font-medium">View on GitHub</a>
+          </div>
+
+          <div class="bg-[#0d1117] p-6 rounded-xl shadow border border-[#30363d] hover:shadow-lg transition-all">
+            <h3 class="font-semibold text-xl text-indigo-300 mb-2">BERT model Fine-tuning with PyTorch and Transformers (Huggingface)</h3>
+            <p class="text-gray-400">Fine-tuned a BERT model on sentiment classification IMDB dataset using PyTorch with GPU acceleration.</p>
+            <p class="text-gray-400">Preprocessed and tokenized IMDB dataset using Hugging Face's transformers and datasets.</p>
+            <p class="text-gray-400">Loaded and evaluated the fine-tuned model via Hugging Face pipeline for both single and batch text predictions.</p>
+            <a href="https://github.com/ArjunJagdale/Fine-tuning-BERT-using-LoRA-QLoRA/tree/main/Finetuning-BERT" class="text-indigo-400 hover:underline font-medium">View on GitHub</a>
+          </div>
+
+          <div class="bg-[#0d1117] p-6 rounded-xl shadow border border-[#30363d] hover:shadow-lg transition-all">
+            <h3 class="font-semibold text-xl text-indigo-300 mb-2">LlamaIndex based Document QA Bot</h3>
+            <p class="text-gray-400">Created a document-based QA system using LlamaIndex and the mistral-small-3.2 model, deployed with a Gradio frontend.</p>
+            <p class="text-gray-400">Handled document parsing and embedding via sentence-transformers through LlamaIndex.</p>
+            <p class="text-gray-400">Implemented context retrieval using LlamaIndex’s query_engine, with model inference served via OpenRouter.</p>
+            <a href="https://github.com/ArjunJagdale/LlamaIndex-OpenRouter-Document-Q-A-Gradio-App-" class="text-indigo-400 hover:underline font-medium">View on GitHub</a>
+          </div>
+
+
+        </div>
+
+      </section>
+
+      <div class="glow-line w-full"></div>
+
+      <!-- Certifications -->
+      <section class="bg-[#161b22] p-8 rounded-xl shadow-md border border-[#30363d]" data-aos="fade-up">
+        <h2 class="text-3xl font-bold mb-4 text-indigo-400 flex items-center gap-2">📜 Certifications</h2>
+        <ul class="list-disc pl-6 text-lg space-y-1 text-gray-300">
+          <li><a href="https://www.credly.com/badges/098ccc7d-fd08-41e8-8331-a862aa5588a5/linked_in_profile" class="text-indigo-400 hover:underline font-medium">IBM Machine Learning Specialist</a></li>
+          <li><a href="https://cdn-uploads.huggingface.co/production/uploads/noauth/1YMMKLry7iDp2OGCm06Xq.webp" class="text-indigo-400 hover:underline font-medium">AI Agents by HuggingFace</a></li>
+          <li><a href="https://www.udacity.com/certificate/e/a54660ea-d16b-11ee-93cf-8b8f0c7b5269" class="text-indigo-400 hover:underline font-medium">Image Captioning Models using Google Cloud</a></li>
+          <li><a href="https://www.codecademy.com/profiles/ArjunJagdale/certificates/926b5df5d59644ddbb5624fbd11238d4" class="text-indigo-400 hover:underline font-medium">Generating Text with PyTorch</a></li>
+          <li><a href="https://www.codecademy.com/profiles/ArjunJagdale/certificates/c48eab73789f42f49e97464d5ffdeb06" class="text-indigo-400 hover:underline font-medium">Finetuning Transformer Models Course</a></li>
+          <li><a href="https://www.codecademy.com/profiles/ArjunJagdale/certificates/a8ab218d5950c29861635cc0bf12fd13" class="text-indigo-400 hover:underline font-medium">Learn Git & GitHub Course</a></li>
+          <li><a href="https://www.codecademy.com/profiles/ArjunJagdale/certificates/332641805a3840ff92dbfbb317c3c2e3" class="text-indigo-400 hover:underline font-medium">Learn Text Classification with PyTorch Course</a></li>
+        </ul>
+      </section>
+
+      <div class="glow-line w-full"></div>
+
+      <!-- Open Source -->
+
+      <section class="bg-[#161b22] p-8 rounded-xl shadow-md border border-[#30363d]" data-aos="fade-up">
+        <h2 class="text-3xl font-bold mb-6 text-indigo-400 flex items-center gap-2">🌍 Open-Source Contributions</h2>
+        <div class="space-y-6">
+        <p class="text-lg text-gray-300">
+          Contributed to Hugging Face's open-source ecosystem (datasets and dataset-viewer) with production-level code enhancements, usability improvements, and critical bug fixes. All contributions were reviewed and merged by core maintainers, impacting widely used tooling in the ML community.
+        </p>
+        
+          <div class="bg-[#0d1117] p-6 rounded-xl shadow border border-[#30363d] hover:shadow-lg transition-all">
+            <h3 class="font-semibold text-xl text-indigo-300 mb-2">Improve Documentation for Dataset APIs</h3>
+            <p class="text-gray-400">Identified and corrected misleading docstrings for core methods like add_column, select, and filter, which return new datasets instead of modifying them in-place.</p>
+            <p class="text-gray-400">Prevented potential bugs caused by misunderstanding dataset immutability by updating five+ key method examples.</p>
+            <p class="text-gray-400">Improves developer onboarding and API correctness across Hugging Face datasets.</p>
+            <a href="https://github.com/huggingface/datasets/pull/7648" class="text-indigo-400 hover:underline font-medium">View On GitHub</a>
+          </div>
+
+          <div class="bg-[#0d1117] p-6 rounded-xl shadow border border-[#30363d] hover:shadow-lg transition-all">
+            <h3 class="font-semibold text-xl text-indigo-300 mb-2">Raise Explicit Error in Folder-Based Dataset Loader</h3>
+            <p class="text-gray-400">Solved a critical UX issue where calling load_dataset("audiofolder") without specifying data_dir led to unexpected behavior and long load times.</p>
+            <p class="text-gray-400">Added explicit error validation in FolderBasedBuilder._info() to enforce correct usage.</p>
+            <p class="text-gray-400">Affects all folder-based loaders like audiofolder, imagefolder, reducing silent failures and improving robustness.</p>
+            <a href="https://github.com/huggingface/datasets/pull/7623" class="text-indigo-400 hover:underline font-medium">View on GitHub</a>
+          </div>
+
+          <div class="bg-[#0d1117] p-6 rounded-xl shadow border border-[#30363d] hover:shadow-lg transition-all">
+            <h3 class="font-semibold text-xl text-indigo-300 mb-2">Refactor Config Defaults to Avoid Shared Mutable State</h3>
+            <p class="text-gray-400">Refactored internal ParquetAndInfoConfig logic to eliminate shared mutable defaults in dataclass fields.</p>
+            <p class="text-gray-400">Ensured safe and predictable behavior in config initialization across multiple jobs in orchestrator.py.</p>
+            <p class="text-gray-400"> Passed all CI checks, Ruff formatting, and Hugging Face’s poetry build standards.</p>
+            <a href="https://github.com/huggingface/dataset-viewer/pull/3219" class="text-indigo-400 hover:underline font-medium">View on GitHub</a>
+          </div>
+
+          <div class="bg-[#0d1117] p-6 rounded-xl shadow border border-[#30363d] hover:shadow-lg transition-all">
+            <h3 class="font-semibold text-xl text-indigo-300 mb-2">Add Unit Tests for Core Caching Utility</h3>
+            <p class="text-gray-400">Designed and implemented comprehensive tests for cache retrieval and error handling in get_previous_step_or_raise.</p>
+            <p class="text-gray-400">Covered scenarios including cache hits, misses, and corrupted responses using internal testing utilities (upsert_response, etc).</p>
+            <p class="text-gray-400">Strengthened the dataset caching layer’s reliability in production workflows.</p>
+            <a href="https://github.com/ArjunJagdale/LlamaIndex-OpenRouter-Document-Q-A-Gradio-App-" class="text-indigo-400 hover:underline font-medium">View on GitHub</a>
+          </div>
+
+          <div class="bg-[#0d1117] p-6 rounded-xl shadow border border-[#30363d] hover:shadow-lg transition-all">
+            <h3 class="font-semibold text-xl text-indigo-300 mb-2">Simplify Gated Dataset Setup using HfApi.update_repo_settings</h3>
+            <p class="text-gray-400">Replaced legacy helper functions with Hugging Face Hub's official API for enabling gated dataset settings.</p>
+            <p class="text-gray-400">Removed over 220+ lines of redundant code across 3 test modules while preserving test integrity.</p>
+            <p class="text-gray-400">Resulted in cleaner, more maintainable tests aligned with the latest SDK capabilities.</p>
+            <a href="https://github.com/huggingface/dataset-viewer/pull/3206" class="text-indigo-400 hover:underline font-medium">View on GitHub</a>
+          </div>
+
+          <div class="bg-[#0d1117] p-6 rounded-xl shadow border border-[#30363d] hover:shadow-lg transition-all">
+            <h3 class="font-semibold text-xl text-indigo-300 mb-2">Add support for Date features in Croissant schema</h3>
+            <p class="text-gray-400">This PR adds support for datasets.features.Date in the Croissant schema generation.</p>
+            <p class="text-gray-400">Fields like Date, UTCDate, and UTCTime (e.g., in Lichess/standard-chess-games) will now be correctly included in the generated spec.</p>
+            <a href="https://github.com/huggingface/dataset-viewer/pull/3223" class="text-indigo-400 hover:underline font-medium">View on GitHub</a>
+          </div>
+
+        </div>
+
+      </section>
+
+      <div class="glow-line w-full"></div>
+
+      <!-- Contact -->
+      <section class="bg-[#161b22] p-8 rounded-xl shadow-md border border-[#30363d]" data-aos="fade-up">
+        <h2 class="text-3xl font-bold mb-4 text-indigo-400 flex items-center gap-2">📨 Contact</h2>
+        <p class="text-lg text-gray-300 mb-2">Email: <a href="mailto:arjunjagdale.sits.entc@email.com" class="text-indigo-400 hover:underline">arjunjagdale.sits.entc@email.com</a></p>
+        <p class="text-lg text-gray-300">Location: Pune, India</p>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center text-sm text-gray-500 py-6 border-t border-[#30363d]">
+      &copy; 2025 Arjun Jagdale. All rights reserved.
+    </footer>
+  </body>
+</html>
