@@ -210,38 +210,41 @@
       <section class="bg-[#161b22] p-8 rounded-xl shadow-md border border-[#30363d]" data-aos="fade-up">
         <h2 class="text-3xl font-bold mb-6 text-indigo-400 flex items-center gap-2">🚀 Projects</h2>
         <div class="space-y-6">
-          <div class="bg-[#0d1117] p-6 rounded-xl shadow border border-[#30363d] hover:shadow-lg transition-all">
-            <h3 class="font-semibold text-xl text-indigo-300 mb-2">Langchain based website Question-Answer Bot</h3>
-            <p class="text-gray-400">Deployed a Retrieval-Augmented Generation (RAG) bot that answers questions asked on a given website URL.</p>
-            <p class="text-gray-400">Utilized LangChain for document loading, text splitting, and semantic context retrieval.</p>
-            <p class="text-gray-400">Generated embeddings using HuggingFaceEmbeddings and stored them in a FAISS index via LangChain’s VectorStore.</p>
-            <a href="https://github.com/ArjunJagdale/Langchain-RAG-QA-BOT" class="text-indigo-400 hover:underline font-medium">View on GitHub</a>
-          </div>
+    <!-- Multi-URL RAG Pipeline -->
+    <div class="bg-[#0d1117] p-6 rounded-xl shadow border border-[#30363d] hover:shadow-lg transition-all">
+      <h3 class="font-semibold text-xl text-indigo-300 mb-2">Multi-URL RAG Pipeline with LangChain and LangGraph</h3>
+      <p class="text-gray-400">Built a multi-URL question-answering system using LangGraph’s <span class="font-medium text-indigo-400">StateGraph</span> to orchestrate a RAG pipeline with conditional routing, retry logic, and session persistence via <span class="font-medium text-indigo-400">MemorySaver</span>.</p>
+      <p class="text-gray-400">Integrated LangChain components including <span class="font-medium">RecursiveCharacterTextSplitter</span> for document chunking, <span class="font-medium">HuggingFaceEmbeddings</span> for vectorization, and <span class="font-medium">FAISS</span> for semantic similarity search.</p>
+      <p class="text-gray-400">Composed prompts using LCEL chains with <span class="font-medium">ChatOpenAI</span> via OpenRouter API and deployed an interactive Gradio interface supporting configurable answer lengths (short/medium/detailed).</p>
+      <a href="https://github.com/ArjunJagdale/URAG" class="text-indigo-400 hover:underline font-medium">View on GitHub</a>
+    </div>
 
-          <div class="bg-[#0d1117] p-6 rounded-xl shadow border border-[#30363d] hover:shadow-lg transition-all">
-            <h3 class="font-semibold text-xl text-indigo-300 mb-2">LangGraph based AI SQL Agent</h3>
-            <p class="text-gray-400">Developed an AI Agent that answers questions based on a given CSV file by generating and executing SQL queries.</p>
-            <p class="text-gray-400">Used LangGraph with mistral-3.2 model to store data, analyze database, data extraction and SQL query generation. </p>
-            <p class="text-gray-400">Applied MCP (Model–Controller–Processor) design pattern for clean, maintainable code structure.</p>
-            <p class="text-gray-400">Implemented Gradio interface for deployment and real time inference.</p>
-            <a href="https://github.com/ArjunJagdale/AI-SQL-Agent-Powered-by-LangGraph-Mistral-" class="text-indigo-400 hover:underline font-medium">View on GitHub</a>
-          </div>
+    <!-- Sentiment Analysis with LSTM -->
+    <div class="bg-[#0d1117] p-6 rounded-xl shadow border border-[#30363d] hover:shadow-lg transition-all">
+      <h3 class="font-semibold text-xl text-indigo-300 mb-2">Sentiment Analysis using PyTorch and LSTM</h3>
+      <p class="text-gray-400">Engineered a 2-layer bidirectional LSTM with <span class="font-medium">128-dim embeddings</span> and 50% dropout for binary sentiment classification on IMDB reviews.</p>
+      <p class="text-gray-400">Applied gradient clipping (<span class="font-medium">max norm=1.0</span>) and <span class="font-medium">BCEWithLogitsLoss</span> for stable training and precision in PyTorch, achieving <span class="font-medium text-indigo-400">85.19% test accuracy</span> with a 4% train-test gap.</p>
+      <p class="text-gray-400">Deployed using <span class="font-medium">Gradio</span> for real-time inference, supporting tokenized sequences up to 256 tokens with padding and OOV handling.</p>
+      <a href="https://github.com/ArjunJagdale/LSTM" class="text-indigo-400 hover:underline font-medium">View on GitHub</a>
+    </div>
 
-          <div class="bg-[#0d1117] p-6 rounded-xl shadow border border-[#30363d] hover:shadow-lg transition-all">
-            <h3 class="font-semibold text-xl text-indigo-300 mb-2">Fine-Tuning BERT on Stanford Sentiment Treebank using PyTorch</h3>
-            <p class="text-gray-400">Built Low Rank Adaption (LoRA) from scratch and injected it into BERT’s query layers using PyTorch.</p>
-            <p class="text-gray-400">Fine-tuned LoRA parameters on Stanford Sentiment Treebank using HuggingFace datasets, tokenizers, and BERT encoder.</p>
-            <p class="text-gray-400">Achieved 91.7% accuracy using just 147k trainable params, with inference on validation set after fine-tuning.</p>
-            <a href="https://github.com/ArjunJagdale/Low-Rank-Adaption-with-PyTorch/tree/main" class="text-indigo-400 hover:underline font-medium">View on GitHub</a>
-          </div>
+    <!-- Low Rank Adaptation Fine-Tuning on BERT -->
+    <div class="bg-[#0d1117] p-6 rounded-xl shadow border border-[#30363d] hover:shadow-lg transition-all">
+      <h3 class="font-semibold text-xl text-indigo-300 mb-2">Low Rank Adaptation Fine-Tuning on BERT using PyTorch</h3>
+      <p class="text-gray-400">Implemented <span class="font-medium text-indigo-400">LoRA</span> for parameter-efficient fine-tuning of BERT-base on SST-2 sentiment classification, achieving <span class="font-medium text-indigo-400">91.74% validation accuracy</span> with only 147K trainable parameters (0.13% of the full model).</p>
+      <p class="text-gray-400">Developed a custom <span class="font-medium">LoRALinear</span> module with low-rank decomposition (rank=4, α=16) injected into BERT’s attention projections, training only adapter matrices while keeping pretrained weights frozen.</p>
+      <p class="text-gray-400">Built an end-to-end fine-tuning pipeline using Hugging Face Transformers, PyTorch, and custom DataLoaders, achieving convergence within 3 epochs and real-time inference with confidence scoring.</p>
+      <a href="https://github.com/ArjunJagdale/BERT" class="text-indigo-400 hover:underline font-medium">View on GitHub</a>
+    </div>
 
-          <div class="bg-[#0d1117] p-6 rounded-xl shadow border border-[#30363d] hover:shadow-lg transition-all">
-            <h3 class="font-semibold text-xl text-indigo-300 mb-2">LlamaIndex based Document QA Bot</h3>
-            <p class="text-gray-400">Created a document-based QA system using LlamaIndex and the mistral-small-3.2 model, deployed with a Gradio frontend.</p>
-            <p class="text-gray-400">Handled document parsing and embedding via sentence-transformers through LlamaIndex.</p>
-            <p class="text-gray-400">Implemented context retrieval using LlamaIndex’s query_engine, with model inference served via OpenRouter.</p>
-            <a href="https://github.com/ArjunJagdale/LlamaIndex-OpenRouter-Document-Q-A-Gradio-App-" class="text-indigo-400 hover:underline font-medium">View on GitHub</a>
-          </div>
+    <!-- Wine Quality Analysis -->
+    <div class="bg-[#0d1117] p-6 rounded-xl shadow border border-[#30363d] hover:shadow-lg transition-all">
+      <h3 class="font-semibold text-xl text-indigo-300 mb-2">Wine Quality Analysis using Exploratory Data Analysis (EDA)</h3>
+      <p class="text-gray-400">Performed exploratory data analysis on wine chemical property data using <span class="font-medium">Pandas, NumPy, and Seaborn</span> to uncover patterns and correlations.</p>
+      <p class="text-gray-400">Built and evaluated multiple ML models — Logistic Regression, Random Forest, and SVC — using <span class="font-medium">scikit-learn</span> with cross-validation and grid search for hyperparameter tuning.</p>
+      <p class="text-gray-400">Applied preprocessing techniques including <span class="font-medium">StandardScaler</span> and <span class="font-medium">PCA</span> for feature standardization and dimensionality reduction, improving model generalization and interpretability.</p>
+      <a href="https://github.com/ArjunJagdale/Wine-Quality-Prediction" class="text-indigo-400 hover:underline font-medium">View on GitHub</a>
+    </div>
 
           <div class="bg-[#0d1117] p-6 rounded-xl shadow border border-[#30363d] hover:shadow-lg transition-all">
             <h3 class="font-semibold text-xl text-indigo-300 mb-2">Cloud-Native Storage API (Docker + Kubernetes / K8S)</h3>
