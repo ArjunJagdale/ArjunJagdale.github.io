@@ -758,24 +758,25 @@
                     <div class="project-title">
                         🔬 <a href="https://github.com/ArjunJagdale/BERT" target="_blank">LoRA Fine-Tuning for BERT</a>
                     </div>
-                    <p><strong>Parameter-Efficient Transformer Fine-Tuning</strong></p>
+                    <p><strong>Low Rank Adaptation Fine-Tuning for Named Entity Recognition</strong></p>
                     
                     <div class="code-block">
                         <pre>efficiency = {
-    "parameter_reduction": "99.87%",
-    "trainable_params": "147K vs 110M",
-    "accuracy": "91.74%",
+    "parameter_reduction": "99.49%",
+    "trainable_params": "641,347",
+    "f1": "0.6744",
+    "Precision" : "0.6539"
     "speedup": "750x faster training"
 }</pre>
                     </div>
 
                     <ul>
-                        <li>Custom <strong>LoRA implementation</strong> with rank-4 matrices</li>
-                        <li>Injected into Q/V projections across <strong>12 BERT layers</strong></li>
-                        <li>Optimized with <strong>AdamW + gradient freezing</strong></li>
+                        <li>Fine-tuned RoBERTa-base for Named Entity Recognition on the Few-NERD</li>
+                        <li>Reduced trainable parameters by 194× while maintaining test F1 of 0.67 and test loss of 0.24.</li>
+                        <li>Deployed the model end-to-end on an AWS EC2 t3.micro instance</strong></li>
                     </ul>
                     
-                    <p style="margin-top: 15px; font-size: 13px; color: #a1a1aa;"><strong>Tech:</strong> PyTorch • HuggingFace • LoRA • SST-2</p>
+                    <p style="margin-top: 15px; font-size: 13px; color: #a1a1aa;"><strong>Tech:</strong> PyTorch • HuggingFace • LoRA • NER</p>
                 </div>
 <div class="project-card">
     <div class="project-title">
@@ -1067,3 +1068,4 @@
     </script>
 </body>
 </html>
+
